@@ -2,7 +2,7 @@
 
 these are a list of useful linux commands  for me
 
-*** turn Arc-them font color to black
+*** turn Arc-them font color to dark grey
 
 #+BEGIN_SRC shell
   sudo find /usr/share/themes/Arc -name "*" -type f -exec sed -i 's/'5C616C'/'212121'/gI' {}  \;
@@ -19,4 +19,11 @@ these are a list of useful linux commands  for me
     fi
 #+END_SRC
 
+*** Get System Log
+   Logs are stored at */var/log* you can get for example boot log by reading the following 
+   file:
+#+BEGIN_SRC shell
+  sudo cat /var/log/boot.log
+#+END_SRC
 
+   
