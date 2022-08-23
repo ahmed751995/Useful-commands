@@ -27,3 +27,11 @@ these are a list of useful linux commands  for me
 #+END_SRC
 
    
+*** php upload file size problem 
+
+    solution to the following error in wordpress
+    #+BEGIN_QUOTE
+    PHP The uploaded file exceeds the upload_max_filesize directive in php.ini
+    #+END_QUOTE
+
+    [[https://stackoverflow.com/questions/41463994/php-the-uploaded-file-exceeds-the-upload-max-filesize-directive-in-php-ini][solution]]
