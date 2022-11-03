@@ -1,0 +1,44 @@
+* i3wm
+  this is a list of apps and commands that i use to configure i3wm.
+
+** apps
+   - volume:  alsamixer, volumeicon-alsa
+   - system monitor: htop
+   - file manager: mc
+   - editor: emacs
+   - redshift: redshift
+
+** commands & configurations
+
+   list of commands that i used to configure i3wm
+   
+   * default dark mode in i3wm 
+
+     set in  ~/.config/gtk-3.0/settings.ini 
+
+     #+BEGIN_SRC 
+     [Settings]
+     gtk-application-prefer-dark-theme=1
+     #+END_SRC
+
+   * keyboard layout
+     to set keyboard layout with *win* and *space* key to switch layout.
+
+     #+BEGIN_SRC 
+     exec "setxkbmap -layout us,ar"
+     exec "setxkbmap -option 'grp:win_space_toggle'"
+     #+END_SRC
+   
+
+   * redshift configurations
+     more info you can read the redshift docs
+
+     #+BEGIN_SRC
+     [redshift]
+     location-provider=manual
+     adjustment-method=randr
+
+     [manual]
+     lat=30.043489
+     lon=31.235291
+     #+END_SRC
