@@ -1,12 +1,16 @@
 * i3wm
-  this is a list of apps and commands that i use to configure i3wm.
+  this is a list of apps and commands that i use to configure i3wm on *Debian*.
 
 ** apps
+   all of these apps could be installed using ~sudo apt install { app }~
+
    - volume:  alsamixer, volumeicon-alsa
    - system monitor: htop
    - file manager: mc
    - editor: emacs
    - redshift: redshift
+   - system info: screenfetch
+   - 
 
 ** commands & configurations
 
@@ -31,7 +35,7 @@
    
 
    * redshift configurations
-     more info you can read the redshift docs
+     for more info you can read the redshift docs
 
      #+BEGIN_SRC
      [redshift]
@@ -42,3 +46,58 @@
      lat=30.043489
      lon=31.235291
      #+END_SRC
+
+
+   * set default app to open specific file
+
+     first getting the *MIME* type by typing in the terminal
+
+     ~xdg-mime query filetype {file}~
+
+     ex: 
+     #+BEGIN_SRC 
+     xdg-mime query filetype Ahmed\ Mohamed.pdf
+
+     output: application/pdf
+     #+END_SRC
+
+     add in the *~/.local/share/applications/defaults.list* the filetype and 
+     the default app for that file.
+
+     ~application/pdf=org.gnome.Evince.desktop;firefox-esr.desktop~
+
+     you can find the list of installed apps in  ~/usr/share/applications~
+
+     *hint* to get the default app for specific file either form defaults.list or by the following
+     command
+
+     ~xdg-mime query default application/pdf~
+     
+     [[https://superuser.com/questions/544272/how-to-open-file-with-default-program-from-command-line][Source]]
+
+     
+   * configure mc *midnight commander*
+
+     copy the file mc.ext to configuration folder (if not exists),
+     mc loads configurations from that file.
+     
+     #+BEGIN_SRC 
+     cp /etc/mc/mc.ext  ~/.config/mc/
+     #+END_SRC
+
+     
+     * keep Midnight Commander running after you open a file
+
+        add ~&~ at the end of the *open* command related to the file type in
+        the ~mc.ext~ file
+
+        example of pdf in my ~mc.ext~ file:
+
+        #+BEGIN_SRC 
+        # PDF
+        type/^PDF
+          Open=/usr/lib/mc/ext.d/doc.sh open pdf &
+          View=%view{ascii} /usr/lib/mc/ext.d/doc.sh view pdf
+        #+END_SRC
+        
+        [[https://superuser.com/questions/1584633/how-to-keep-midnight-commander-running-after-you-open-a-file][Source]]
