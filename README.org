@@ -33,6 +33,7 @@
 
      
    * enhance terminal
+     thanks to [[https://ivanaugustobd.medium.com/your-terminal-can-be-much-much-more-productive-5256424658e8][code slicer]]
      
      * install zsh
        #+BEGIN_SRC shell
@@ -50,7 +51,7 @@
      * install [[https://github.com/zsh-users/zsh-autosuggestions][zsh-autosuggestions]]
        follow instructions [[https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh][here]]
 
-     * add to  *~/.bashrc* the following command
+     * add to the end of *~/.bashrc* the following command
        ~zsh~
 
 
