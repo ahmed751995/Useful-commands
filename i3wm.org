@@ -61,17 +61,26 @@
      output: application/pdf
      #+END_SRC
 
-     add in the *~/.local/share/applications/defaults.list* the filetype and 
+     add in the *~/.config/mimeapps.list* the filetype (if doesn't exist) and 
      the default app for that file.
-
-     ~application/pdf=org.gnome.Evince.desktop;firefox-esr.desktop~
+     
+     #+BEGIN_SRC 
+     [Default Applications]
+     ...
+     application/pdf=org.gnome.Evince.desktop;firefox-esr.desktop
+     ...
+     #+END_SRC
 
      you can find the list of installed apps in  ~/usr/share/applications~
 
-     *hint* to get the default app for specific file either form defaults.list or by the following
+     *hint*: to get the default app for specific file either form ~mimeapps.list~ or by the following
      command
 
      ~xdg-mime query default application/pdf~
+
+     if you get default app different than the one in ~mimeapps.list~ check
+     the following file ~~/.local/share/applications/defaults.list~ and also make sure
+     that your added the mimetype and the app under *[Default Applications]*.
      
      [[https://superuser.com/questions/544272/how-to-open-file-with-default-program-from-command-line][Source]]
 
@@ -93,11 +102,13 @@
 
         example of pdf in my ~mc.ext~ file:
 
-        #+BEGIN_SRC 
+        #+BEGIN_SRC
+        ...
         # PDF
         type/^PDF
           Open=/usr/lib/mc/ext.d/doc.sh open pdf &
           View=%view{ascii} /usr/lib/mc/ext.d/doc.sh view pdf
+        ...
         #+END_SRC
         
         [[https://superuser.com/questions/1584633/how-to-keep-midnight-commander-running-after-you-open-a-file][Source]]

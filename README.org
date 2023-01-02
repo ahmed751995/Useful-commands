@@ -1,7 +1,7 @@
 * Useful linux commands   
 
 ** General commands
-   these are a list of useful linux commands  for me
+   these are a list of useful linux commands and apps for me
 
    * turn Arc-them font color to dark grey
      
@@ -28,7 +28,40 @@
       #+END_SRC
 
    
-    * php upload file size problem 
+   * use multiple versions of nodejs
+   * use multiple versions of python
+
+     
+   * enhance terminal
+     
+     * install zsh
+       #+BEGIN_SRC shell
+       sudo apt install zsh
+       #+END_SRC
+
+     * install [[https://github.com/ohmyzsh/ohmyzsh][Oh My Zsh]]
+       
+       follow instructions [[https://github.com/ohmyzsh/ohmyzsh#manual-inspection][here]] and don't forget to add plugins
+
+     * install [[https://github.com/zsh-users/zsh-syntax-highlighting][zsh-syntax-highliting]]
+
+       follow instructions [[https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh][here]]
+
+     * install [[https://github.com/zsh-users/zsh-autosuggestions][zsh-autosuggestions]]
+       follow instructions [[https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh][here]]
+
+     * add to  *~/.bashrc* the following command
+       ~zsh~
+
+
+** shortcuts
+
+   * ~ESC~ + ~0~ = ~F10~
+
+
+** wordpress
+   
+   * php upload file size problem 
 
       solution to the following error in wordpress
       
@@ -41,4 +74,4 @@
       ftp upload problem
 
       [[https://stackoverflow.com/questions/21316282/wordpress-plugin-installation-failed-to-connect-to-ftp-server-safest-solutio][solution]]
-
+      
