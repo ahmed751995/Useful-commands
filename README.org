@@ -54,6 +54,14 @@
      * add to the end of *~/.bashrc* the following command
        ~zsh~
 
+   * stop git from asking username and token
+
+      #+BEGIN_SRC shell
+      git config credential.helper store
+      #+END_SRC
+
+      [[https://stackoverflow.com/questions/11403407/git-asks-for-username-every-time-i-push][source]]
+
 
 ** shortcuts
 
