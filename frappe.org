@@ -8,11 +8,24 @@ this is a list of lessons that i learned during working as frappe developer.
 #+BEGIN_QUOTE
 - [[#python][Python]]
 - [[#js][Js]]
+  - [[#change-property-of-child-table][Change property of child table]]
 - [[#commands][Commands]]
 #+END_QUOTE
 
 ** Python
 ** Js
+*** Change property of child table
+changing the property of a field in child table such as making it *hidden* or *readonly*
+
+in the following example i change the measure button to hidden when it clicked
+
+#+BEGIN_SRC js
+frappe.ui.form.on("Product Order Details", {
+  measure: function(frm, cdt, cdn) {
+    const df_measure  = frappe.meta.get_docfield('Product Order Details', 'measure', cdn);
+    df_measure.hidden = 1;
+  }
+#+END_SRC
 
 
 ** Commands
