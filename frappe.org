@@ -1,0 +1,20 @@
+#+TITLE: frappe framework tips and tricks
+#+OPTIONS: \n:t
+#+OPTIONS: toc:2
+
+this is a list of lessons that i learned during working as frappe developer.
+
+
+* python
+* js
+
+
+* commands
+
+** reset admin password
+
+#+BEGIN_SRC shell
+bench --site alquds set-admin-password admin 
+#+END_SRC
+
+
