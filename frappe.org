@@ -4,14 +4,20 @@
 
 this is a list of lessons that i learned during working as frappe developer.
 
+* Table of Contents
+#+BEGIN_QUOTE
+- [[#python][Python]]
+- [[#js][Js]]
+- [[#commands][Commands]]
+#+END_QUOTE
 
-* python
-* js
+** Python
+** Js
 
 
-* commands
+** Commands
 
-** reset admin password
+*** reset admin password
 
 #+BEGIN_SRC shell
 bench --site alquds set-admin-password admin 
