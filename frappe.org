@@ -10,6 +10,9 @@ this is a list of lessons that i learned during working as frappe developer.
 - [[#js][Js]]
   - [[#change-property-of-child-table][Change property of child table]]
 - [[#commands][Commands]]
+  - [[#reset-admin-password][Reset admin password]]
+  - [[#download-custom-frappe-version][Download custom frappe version]]
+  - [[#get-app-from-specific-branch][Get app from specific branch]]
 #+END_QUOTE
 
 ** Python
@@ -30,10 +33,23 @@ frappe.ui.form.on("Product Order Details", {
 
 ** Commands
 
-*** reset admin password
+*** Reset admin password
 
 #+BEGIN_SRC shell
 bench --site alquds set-admin-password admin 
 #+END_SRC
 
+*** Download custom frappe version
 
+by default frappe download *develop* version so it's better to select specific version.
+
+#+BEGIN_SRC shell
+bench init frappe-14 --version=version-14
+#+END_SRC
+
+
+*** Get app from specific branch
+
+#+BEGIN_SRC shell
+bench get-app erpnext --branch version-14
+#+END_SRC
