@@ -1,8 +1,7 @@
-#+TITLE: frappe framework tips and tricks
 #+OPTIONS: \n:t
-#+OPTIONS: toc:2
-
-this is a list of lessons that i learned during working as frappe developer.
+#+OPTIONS: broken-links:t
+#+OPTIONS: ^:nil
+#+TITLE: frappe framework tips and tricks
 
 * Table of Contents
 #+BEGIN_QUOTE
@@ -15,21 +14,46 @@ this is a list of lessons that i learned during working as frappe developer.
   - [[#get-app-from-specific-branch][Get app from specific branch]]
 #+END_QUOTE
 
+this is a list of lessons that i learned during working as frappe developer.
+
+
 ** Python
 ** Js
 *** Change property of child table
-changing the property of a field in child table such as making it *hidden* or *readonly*
+changing the property of a field in child table such as making it *hidden* or *readonly*.
 
-in the following example i change the measure button to hidden when it clicked
+we have two methods here:
 
-#+BEGIN_SRC js
-frappe.ui.form.on("Product Order Details", {
-  measure: function(frm, cdt, cdn) {
-    const df_measure  = frappe.meta.get_docfield('Product Order Details', 'measure', cdn);
-    df_measure.hidden = 1;
-  }
-#+END_SRC
+- using *set_df_property* :
+  
+  =set_df_property(fieldname, property, value, docname, table_field, table_row_name=null)=
+  
+  fieldname => child table _fieldname_ ex: *product_order_details*.
+  
+  property => property which you want to change ex: *read_only*.
+  
+  value => property value.
+  
+  docname => frm name.
+  
+  table_field => child table field name.
+  
+  table_row_name => row name value *6bsl2342* for example.
 
+  example: 
+  #+BEGIN_SRC js
+  frm.set_df_property('payment', 'read_only', 1, frm.doc.name, 'payment_amount', frm.selected_doc.name)
+  #+END_SRC
+
+- using *meta*:
+  in the following example i change the measure button to hidden when it clicked.
+  #+BEGIN_SRC js
+  frappe.ui.form.on("Product Order Details", {
+      measure: function(frm, cdt, cdn) {
+          const df_measure  = frappe.meta.get_docfield('Product Order Details', 'measure', cdn);
+          df_measure.hidden = 1;
+      }
+  #+END_SRC
 
 ** Commands
 
