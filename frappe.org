@@ -12,6 +12,7 @@
   - [[#reset-admin-password][Reset admin password]]
   - [[#download-custom-frappe-version][Download custom frappe version]]
   - [[#get-app-from-specific-branch][Get app from specific branch]]
+  - [[#expand-db-size][Expand DB size]]
 #+END_QUOTE
 
 this is a list of lessons that i learned during working as frappe developer.
@@ -76,4 +77,25 @@ bench init frappe-14 --version=version-14
 
 #+BEGIN_SRC shell
 bench get-app erpnext --branch version-14
+#+END_SRC
+
+*** Expand DB size
+
+during restoring large database sometimes database is too large to get restored, and so you will
+find some tables get dropped. in order to solve this issue expand the size of the database by
+adding the following line at the end of database config file under *[mysqld]* section in
+=/etc/mysql/my.cnf=
+
+#+BEGIN_SRC
+max_allowed_packet=500MB
+#+END_SRC
+
+example:
+
+#+BEGIN_SRC
+[mysqld]
+character-set-client-handshake = FALSE
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+max_allowed_packet=500MB
 #+END_SRC
