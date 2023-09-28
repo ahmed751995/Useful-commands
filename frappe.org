@@ -13,6 +13,7 @@
   - [[#download-custom-frappe-version][Download custom frappe version]]
   - [[#get-app-from-specific-branch][Get app from specific branch]]
   - [[#expand-db-size][Expand DB size]]
+  - [[#naming-local-site][Naming local site]]
 #+END_QUOTE
 
 this is a list of lessons that i learned during working as frappe developer.
@@ -101,3 +102,8 @@ max_allowed_packet=500MB
 #+END_SRC
 
 source [[https://github.com/omneyaEid][Omnya Eid]] thanks *Omnia*
+
+*** Naming local site
+
+naming a local site with ~.dev~ extension ex: =local.dev=, browsers will automatically use =https= protocol
+which will break your site on localhost.
