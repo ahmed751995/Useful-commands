@@ -29,8 +29,8 @@
      to set keyboard layout with *win* and *space* key to switch layout.
 
      #+BEGIN_SRC 
-     exec "setxkbmap -layout us,ar"
-     exec "setxkbmap -option 'grp:win_space_toggle'"
+     exec setxkbmap -layout us,ar
+     exec setxkbmap -option 'grp:win_space_toggle'
      #+END_SRC
    
 
